@@ -13,9 +13,6 @@ class Validador(object):
         #raise NotImplementedError()
         
     def validar(self, xml):
-        # Aqui é importante remover a declaração do encoding
-        # para evitar erros de conversão unicode para ascii
-        #xml_limpo = tira_abertura(xml).encode(u'utf-8')
         xml_tree = etree.fromstring(xml.encode('utf-8'))
         
         log.info(u'Arquivo de schema: %s', self.arquivo_esquema)
